@@ -1,0 +1,32 @@
+/*!********************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[1].use[1]!./node_modules/postcss-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/assets/scss/common.scss ***!
+  \********************************************************************************************************************************************************************************************/
+a {
+  color: red;
+}
+a > * a {
+  color: green;
+}
+
+body {
+  background: url(../images/sample.jpg);
+}
+
+.test {
+  color: red;
+}
+
+@media screen and (min-width: 768px) {
+  a > * a {
+    font-size: 5rem;
+  }
+  a > * a:hover {
+    color: blue;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  a > * a {
+    font-size: 11rem;
+  }
+}
