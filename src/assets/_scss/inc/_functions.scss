@@ -1,0 +1,11 @@
+@use "setting" as *;
+@use "mixin" as *;
+
+// 関数の登録
+// @function set-size($size, $base-font-size: 16px) {
+//   @return ($size / $base-font-size) * 1em;
+// }
+
+@function set-size($size, $base: 16px) {
+  @return calc($size / $base * 1rem);
+}

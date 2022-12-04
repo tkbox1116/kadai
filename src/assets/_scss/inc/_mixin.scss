@@ -1,0 +1,50 @@
+@charset 'UTF-8';
+@use "sass:map";
+@use "setting" as *;
+
+//============================================
+//  MIXIN
+//============================================
+
+//  font-sizeの計算
+//--------------------------------------------
+@mixin fontsize($size) {
+  // font-size: $size + px;
+  // font-size: calc($size / $base) + rem;
+}
+
+//  Media Queries
+//--------------------------------------------
+@mixin mq($breakpoint, $type: min) {
+  @if map-has-key($breakpoints, $breakpoint) {
+    @if ($type == max) {
+      $width: map.get($breakpoints, $breakpoint);
+      $width: $width - 1;
+      @media screen and (max-width: #{$width}) {
+        @content;
+      }
+    } @else if($type == min) {
+      @media screen and (min-width: #{map.get($breakpoints, $breakpoint)}) {
+        @content;
+      }
+    }
+  }
+}
+
+//  transition
+//--------------------------------------------
+@mixin easing() {
+  transition: $easing-heart;
+  transition-duration: .3s;
+}
+
+//  疑似要素でアイコン
+//--------------------------------------------
+$PATH_IMG: "/assets/images/";
+
+@mixin icon($fileName, $width, $height) {
+  width: $width;
+  height: $height;
+  background: url($PATH_IMG + $fileName) no-repeat 50% 50%;
+  background-size: $width $height;
+}

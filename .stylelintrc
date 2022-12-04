@@ -10,6 +10,7 @@
     "prettier/prettier": true,
     "number-leading-zero": "never",
     "length-zero-no-unit": true,
-    "unit-case": "lower"
+    "unit-case": "lower",
+    "no-descending-specificity": null
   }
 }

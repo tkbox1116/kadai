@@ -1,0 +1,34 @@
+@charset 'UTF-8';
+@use "../../inc" as *;
+/*
+  Project
+*/
+.p-project {
+  background-color: #fff;
+  box-shadow: 0 0 3px rgba(0, 0, 0, .16);
+
+  &__title {
+    font-weight: bold;
+  }
+
+  &__text {
+    margin-top: .5rem;
+    font-size: .75rem;
+  }
+
+  &[href]:hover {
+    background-color: #f0f0f0;
+  }
+}
+
+@include mq(md) {
+  .p-project {
+    &__title {
+      font-size: 1.25rem;
+    }
+
+    &__text {
+      font-size: .875rem;
+    }
+  }
+}

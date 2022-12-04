@@ -1,0 +1,141 @@
+@charset 'UTF-8';
+@use "../../inc" as *;
+/*
+  Heading
+*/
+
+.c-heading {
+  font-weight: 600;
+  letter-spacing: .3rem;
+  &.-sizeS {
+    $font-size: 14px;
+    font-size: set-size($font-size);
+
+    @include mq(md) {
+      $font-size: 15px;
+      font-size: set-size($font-size);
+    }
+
+    @include mq(lg) {
+      $font-size: 16px;
+      font-size: set-size($font-size);
+    }
+
+    @include mq(xxl) {
+      $font-size: 18px;
+      font-size: set-size($font-size);
+    }
+  }
+
+  &.-sizeM {
+    $font-size: 20px;
+    font-size: set-size($font-size);
+    @include mq(sm) {
+      $font-size: 22px;
+      font-size: set-size($font-size);
+    }
+    @include mq(md) {
+      $font-size: 24px;
+      font-size: set-size($font-size);
+    }
+
+    @include mq(lg) {
+      $font-size: 26px;
+      font-size: set-size($font-size);
+    }
+
+    @include mq(xxl) {
+      $font-size: 28px;
+      font-size: set-size($font-size);
+    }
+  }
+
+  &.-sizeL {
+    $font-size: 22px;
+    font-size: set-size($font-size);
+    @include mq(sm) {
+      $font-size: 24px;
+      font-size: set-size($font-size);
+    }
+    @include mq(md) {
+      $font-size: 26px;
+      font-size: set-size($font-size);
+    }
+
+    @include mq(lg) {
+      $font-size: 28px;
+      font-size: set-size($font-size);
+    }
+
+    @include mq(xxl) {
+      $font-size: 32px;
+      font-size: set-size($font-size);
+    }
+  }
+
+  &.-gray {
+    color: $colorDarkGray;
+  }
+
+  .br {
+    display: block;
+    &.-sp {
+      @include mq(lg) {
+        display: inline-block;
+      }
+    }
+  }
+
+  .caption {
+    $font-size: 12px;
+    display: block;
+    font-family: $font-set-en;
+    font-size: set-size($font-size);
+    letter-spacing: .05rem;
+    @include mq(lg) {
+      $font-size: 13px;
+      font-size: set-size($font-size);
+    }
+    @include mq(xxl) {
+      $font-size: 14px;
+      font-size: set-size($font-size);
+    }
+
+    &.-primary {
+      margin-top: .5rem;
+    }
+
+    &.-amber {
+      color: $colorAccent;
+    }
+  }
+
+  &.-center {
+    text-align: center;
+  }
+
+  &.-en {
+    font-family: $font-set-en;
+    font-size: 1.5rem;
+    font-weight: normal;
+
+    @include mq(md) {
+      font-size: 1.75rem;
+    }
+
+    @include mq(lg) {
+      font-size: 2rem;
+    }
+
+    @include mq(xxl) {
+      font-size: 2.25rem;
+    }
+    @include mq(xxxl) {
+      font-size: 2.5rem;
+    }
+  }
+
+  &.-serif {
+    font-family: $font-set-serif;
+  }
+}

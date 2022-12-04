@@ -42,6 +42,10 @@ module.exports = {
     filename: "./assets/js/[name].bundle.js", //出力されるファイル名の変更
   },
 
+  stats: {
+    children: true,
+  },
+
   module: {
     rules: [
       {
@@ -130,10 +134,10 @@ module.exports = {
     }),
 
     new ImageminPlugin({
-      test: /\.(jpe?g|png|gif|svg)$/i,
+      test: /\.(jpe?g|png|gif|svg|)$/i,
       pngquant: {
         // PNG
-        quality: [0.85, 1], //画像の圧縮率
+        quality: 85, //画像の圧縮率
       },
       gifsicle: {
         // GIF

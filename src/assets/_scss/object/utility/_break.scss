@@ -1,0 +1,26 @@
+@charset 'UTF-8';
+@use "../../inc" as *;
+//====================================
+//  Break
+//====================================
+
+/*
+  Break
+*/
+.u-break {
+  .-sp {
+    display: inline-block;
+
+    @include mq(md) {
+      display: none;
+    }
+  }
+
+  .-tab {
+    display: none;
+
+    @include mq(md) {
+      display: inline-block;
+    }
+  }
+}

@@ -1,0 +1,423 @@
+@use "../inc" as *;
+/* ==============================
+    swiper-area
+  ============================== */
+
+.swiper-area {
+  &.-projectMain {
+    position: relative;
+    top: -50px;
+    @include mq(lg) {
+      top: -70px;
+    }
+    @include mq(xxl) {
+      top: -100px;
+    }
+
+    &::before {
+      content: "";
+      display: inline-block;
+      position: absolute;
+      z-index: 0;
+      // width: 100%;
+      // height: 100%;
+      top: 60%;
+      left: 50%;
+      height: 100%;
+      transform: translateX(-50%);
+      background: url(/assets/images/top/project-line.svg) no-repeat;
+      background-size: 100% 100%;
+    }
+  }
+
+  &.-projectContent {
+    overflow: visible;
+    @include mq(lg) {
+      width: 45.6%;
+    }
+  }
+}
+
+/* ==============================
+    swiper
+  ============================== */
+
+.swiper {
+  &.-projectMain {
+    z-index: 1;
+    padding-top: -5%;
+
+    @include mq(md) {
+      padding-top: -7%;
+    }
+  }
+
+  &.-conceptMember {
+    overflow: visible;
+    @include mq(md) {
+      .swiper-wrapper {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 32px;
+      }
+    }
+  }
+
+  &.-projectContent {
+    overflow: visible;
+    @include mq(lg) {
+      overflow: hidden;
+    }
+  }
+}
+
+/* ==============================
+    swiper-slide
+  ============================== */
+.swiper-slide {
+  transition: .7s;
+  &.-projectMain {
+    width: 68%;
+    padding-top: 50px;
+    transform: scale(.8); /* スライドの大きさ調整 */
+    opacity: .5;
+    @include mq(lg) {
+      width: 50%;
+      padding-top: 100px;
+    }
+
+    &.swiper-slide-active {
+      position: relative;
+      z-index: 1;
+      padding-top: 0;
+      transform: scale(1); /* スライドの大きさ調整 */
+      opacity: 1;
+      // @include mq(lg) {
+      // }
+
+      &::after {
+        content: "";
+        display: inline-block;
+        position: absolute;
+        z-index: 10;
+        bottom: -25%;
+        left: 50%;
+        width: 100%;
+        height: 480px;
+        transform: translateX(-50%);
+        background: url(/assets/images/top/project-line.svg) no-repeat;
+        background-size: 100%;
+      }
+    }
+  }
+
+  &.-journalMain {
+    max-width: 240px;
+    @include mq(lg) {
+      max-width: 280px;
+    }
+  }
+
+  &.-conceptMember {
+    max-width: 200px;
+    @include mq(lg) {
+      max-width: 280px;
+    }
+  }
+
+  &.-secondary {
+    height: auto;
+  }
+}
+
+/* ==============================
+    scrollbar
+  ============================== */
+
+.swiper-scrollbar {
+  position: relative;
+  &::after {
+    content: "";
+    position: absolute;
+    z-index: 1;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    margin: auto;
+    background-color: $colorGray;
+  }
+
+  &.-primary {
+    width: 3.5rem;
+    margin: 0 auto;
+
+    @include mq(lg) {
+      width: 5rem;
+    }
+  }
+
+  &.-projectMainText {
+    top: -11px;
+  }
+}
+
+.swiper-scrollbar-drag {
+  position: absolute;
+  z-index: 2;
+  top: 0;
+  bottom: 0;
+  height: 20px;
+  margin: auto 0;
+  padding: 9px 0;
+  background-clip: content-box;
+  background-color: $primary-text-color;
+  cursor: pointer;
+}
+
+/* ==============================
+    pagination
+  ============================== */
+
+.swiper-pagination {
+  &.-projectMain {
+    position: absolute;
+  }
+}
+
+/* ==============================
+    swiper-button
+  ============================== */
+
+.swiper-button-wrap {
+  position: relative;
+  width: 160px;
+  margin: 0 auto;
+  @include mq(lg) {
+    width: 200px;
+  }
+
+  &.-projectMainText {
+    width: 100%;
+    max-width: 250px;
+    @include mq(lg) {
+      max-width: 280px;
+    }
+    .inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      width: 100%;
+    }
+  }
+
+  &.-text {
+    &::before {
+      content: "|";
+      display: inline-block;
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+  }
+}
+
+.swiper-button-prev,
+.swiper-button-next {
+  cursor: pointer;
+  &.-arrow {
+    display: grid;
+
+    position: absolute;
+    z-index: 1;
+    top: 0;
+    bottom: 0;
+    width: .75rem;
+    height: .75rem;
+    margin: auto;
+    transition: .3s ease-in-out;
+    cursor: pointer;
+    place-content: center;
+
+    // @include mq(lg) {
+    // }
+
+    &::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      width: .75rem;
+      height: .75rem;
+      margin: auto 0;
+      background: url(/assets/images/common/arrow-black.svg) no-repeat;
+      background-size: contain;
+    }
+  }
+
+  &.-projectMainText {
+    span {
+      display: block;
+      position: relative;
+      opacity: .6;
+      &::before,
+      &::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        bottom: 0;
+
+        width: .75rem;
+        height: .75rem;
+        margin: auto 0;
+
+        &::before {
+          left: 4.5rem;
+
+          transform: rotate(180deg);
+          background: url(/assets/images/common/arrow-black.svg) no-repeat;
+        }
+      }
+    }
+    &.swiper-button-disabled {
+      span {
+        opacity: 1;
+      }
+    }
+  }
+
+  &.-text {
+    position: relative;
+    opacity: .6;
+
+    &::before {
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+    }
+
+    &.swiper-button-disabled {
+      opacity: 1;
+    }
+  }
+}
+
+.swiper-button-prev {
+  &.-arrow {
+    left: 0;
+
+    &::before {
+      transform: rotate(180deg);
+    }
+
+    .current {
+      position: absolute;
+      top: -3px;
+      left: 1.75rem;
+      @include mq(lg) {
+        left: 1.75rem;
+      }
+    }
+  }
+
+  &.-text {
+    &::before {
+      content: "庭 → 家";
+      left: 0;
+    }
+  }
+}
+.swiper-button-next {
+  &.-arrow {
+    right: 0;
+
+    .total {
+      position: absolute;
+      top: -3px;
+      right: 1.75rem;
+      @include mq(lg) {
+        right: 1.75rem;
+      }
+    }
+  }
+
+  &.-text {
+    &::before {
+      content: "家 → 庭";
+      right: 0;
+    }
+  }
+
+  &.-projectMainText {
+    span {
+      &::before {
+        right: 4.5rem;
+        background: url(/assets/images/common/arrow-black.svg) no-repeat;
+      }
+    }
+  }
+}
+
+/* ==============================
+    swiper-item-wrap
+  ============================== */
+.swiper-item-wrap {
+  display: flex;
+  position: relative;
+  align-items: center;
+  justify-content: space-between;
+  width: 90%;
+  margin: 0 auto;
+
+  &.-primary {
+    max-width: 400px;
+    @include mq(lg) {
+      max-width: 360px;
+    }
+    @include mq(xxl) {
+      max-width: 400px;
+    }
+  }
+
+  &.-projectMain {
+    margin: 2rem auto 0;
+  }
+
+  &.-journalMain {
+    margin: .5rem auto 0;
+    @include mq(lg) {
+      // margin-left: auto;
+      // margin-top: 2rem;
+    }
+  }
+
+  &.-projectContent {
+    margin: 0 auto;
+
+    .inner {
+      margin: 1rem auto 1.5rem;
+      @include mq(md) {
+        margin: 2rem auto 1.5rem;
+      }
+
+      @include mq(lg) {
+        margin: .75rem auto 1.5rem;
+      }
+    }
+  }
+
+  &.-conceptMember {
+    position: absolute;
+    top: -1rem;
+    right: 5%;
+    width: auto;
+
+    @include mq(md) {
+      display: none;
+    }
+  }
+}

@@ -1,0 +1,33 @@
+@charset 'UTF-8';
+@use "../../inc" as *;
+/*
+  Header
+*/
+.p-header {
+  overflow: hidden;
+  background-color: #fff;
+
+  &__info {
+    font-size: 0;
+  }
+
+  &__title {
+    display: inline-block;
+    font-size: medium;
+    vertical-align: middle;
+  }
+
+  &__text {
+    display: none;
+    margin-left: 1em;
+    font-size: medium;
+    vertical-align: middle;
+
+    @include mq(md) {
+      display: inline-block;
+    }
+  }
+
+  // &__nav {
+  // }
+}

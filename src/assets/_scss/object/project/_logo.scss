@@ -1,0 +1,89 @@
+@charset 'UTF-8';
+@use "../../inc" as *;
+/*
+  Logo
+*/
+.p-logo,
+.custom-logo-link {
+  display: inline-block;
+  padding: .5em 0;
+  color: $colorMain;
+  font-size: 1.5em;
+  font-weight: bold;
+  letter-spacing: -.02em;
+  line-height: 1;
+  text-decoration: none;
+
+  @include mq(md) {
+    padding: 1em 0;
+    // font-size: 1.5em;
+  }
+}
+.modal-open {
+  display: inline-block;
+  margin: 10px;
+  background-color: #666;
+  color: #fff;
+}
+
+.modal-open a {
+  display: inline-block;
+  padding: 5px;
+  color: #fff;
+  text-decoration: none;
+}
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+.modal:not(:target) {
+  visibility: hidden;
+  transition: opacity .5s, visibility .5s;
+  opacity: 0;
+}
+.modal:target {
+  visibility: visible;
+  transition: opacity .5s, visibility .5s;
+  opacity: 1;
+}
+.modal .overlay {
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: .7;
+  background-color: #000;
+}
+.modal-wrapper {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 100%;
+  min-width: 300px;
+  max-width: 400px;
+  height: 100%;
+  max-height: 350px;
+  transform: translate(-50%, -50%);
+  background-color: #fff;
+}
+.modal-contents {
+  position: relative;
+  box-sizing: border-box;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+}
+.modal-content {
+  margin: 25px;
+}
+.modal-close {
+  position: absolute;
+  top: 5px;
+  right: 10px;
+  text-decoration: none;
+}

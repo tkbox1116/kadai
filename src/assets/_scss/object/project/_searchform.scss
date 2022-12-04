@@ -1,0 +1,74 @@
+@charset 'UTF-8';
+@use "../../inc" as *;
+/*
+  Search
+*/
+
+.searchform {
+  position: relative;
+}
+
+.searchfield {
+  width: 100%;
+  height: 45px;
+  padding: 0 10px;
+  border: none;
+  outline: none;
+  background-color: $colorLightGray;
+  font-size: .875rem;
+
+  &:focus {
+    transition: .35s ease;
+    color: $colorGray;
+    &::-webkit-input-placeholder {
+      transition: opacity .45s ease;
+      opacity: 0;
+    }
+    &::-moz-placeholder {
+      transition: opacity .45s ease;
+      opacity: 0;
+    }
+    &:-ms-placeholder {
+      transition: opacity .45s ease;
+      opacity: 0;
+    }
+  }
+}
+
+.searchsubmit {
+  display: none;
+  position: absolute;
+  top: 0;
+  right: 8%;
+  margin-top: 10px;
+  padding: 0;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+}
+
+.searchsubmit:hover {
+  opacity: .6;
+}
+
+.button-submit {
+  display: block;
+  position: absolute;
+  top: 50%;
+  right: 0;
+  padding: 22px;
+  transform: translateY(-50%);
+
+  &::before {
+    content: "";
+    display: inline-block;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 20px;
+    height: 20px;
+    transform: translate(-50%, -50%);
+    background: url(../../assets/images/common/loupe-icon.svg) no-repeat;
+    background-size: contain;
+  }
+}

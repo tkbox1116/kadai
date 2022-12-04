@@ -1,0 +1,17 @@
+@charset 'UTF-8';
+/*
+  Header
+-----------------------------------------------------*/
+.l-header {
+  position: fixed;
+  z-index: 2;
+  top: 0;
+  right: 0;
+  left: 0;
+
+  &__wrap {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+}

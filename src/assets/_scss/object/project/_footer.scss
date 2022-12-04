@@ -1,0 +1,213 @@
+@charset 'UTF-8';
+@use "../../inc" as *;
+/*
+footer
+*/
+
+.p-footer {
+  &__powered {
+    margin-top: 5px;
+    color: $colorWhite;
+    font-family: $font-set-en;
+    font-size: .75rem;
+    @include mq(md) {
+      margin-top: 10px;
+      font-size: .875rem;
+    }
+  }
+
+  small {
+    display: inline-block;
+    margin-top: 10px;
+    color: $colorWhite;
+    font-family: $font-set-en;
+    font-size: .75rem;
+    @include mq(md) {
+      margin-top: 5px;
+      font-size: .875rem;
+    }
+  }
+
+  &__wrap {
+    @include mq(lg) {
+      display: flex;
+      justify-content: space-between;
+    }
+  }
+
+  &__left {
+    margin-top: 1rem;
+
+    @include mq(lg) {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+
+      width: 64%;
+      margin-top: 0;
+      gap: 1rem 2rem;
+    }
+
+    .p-footer__menu {
+      &:nth-of-type(1),
+      &:nth-of-type(2),
+      &:nth-of-type(3) {
+        @include mq(lg) {
+          margin-bottom: 1rem;
+        }
+      }
+    }
+  }
+
+  &__right {
+    @include mq(lg) {
+      width: 24%;
+    }
+  }
+
+  &__menuTitle {
+    position: relative;
+    padding: 1rem 0;
+    border-bottom: 1px solid #707070;
+    font-size: 1rem;
+    font-weight: 700;
+
+    @include mq(lg) {
+      margin-bottom: .5rem;
+      padding: 0;
+      border: none;
+      font-size: 1.125rem;
+    }
+
+    a {
+      color: $colorWhite;
+      text-decoration: none;
+    }
+
+    &.-arrow {
+      &::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        width: 8px;
+        height: 8px;
+        margin: auto 0;
+        transform: rotate(135deg);
+        transition: transform .3s ease-in-out;
+        border-top: 1px solid $colorWhite;
+        border-right: 1px solid $colorWhite;
+        @include mq(lg) {
+          display: none;
+        }
+      }
+
+      &.is-active {
+        &::before {
+          transform: rotate(-45deg);
+        }
+      }
+
+      & + dd {
+        display: none;
+        @include mq(lg) {
+          display: block;
+        }
+      }
+    }
+  }
+
+  &__menuContent {
+    margin: 8px 0 1.5rem;
+    @include mq(lg) {
+      margin-bottom: 0;
+    }
+    ul {
+      li {
+        a {
+          color: $colorWhite;
+          text-decoration: none;
+          @include mq(lg) {
+            font-size: .85rem;
+          }
+        }
+        &:not(:last-child) {
+          margin-bottom: 8px;
+        }
+      }
+    }
+  }
+
+  &__info {
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: flex-end;
+    justify-content: flex-end;
+    margin-top: 1.5rem;
+
+    @include mq(lg) {
+      margin-top: 2rem;
+    }
+
+    ul {
+      li {
+        &:not(:first-child) {
+          margin-top: 3px;
+        }
+        a {
+          color: $colorWhite;
+          font-size: .75rem;
+          text-decoration: none;
+        }
+      }
+    }
+
+    .twitter {
+      display: inline-block;
+      margin-left: 5rem;
+      @include mq(lg) {
+        margin-bottom: 2rem;
+        margin-left: 1rem;
+      }
+      a {
+        display: block;
+        position: relative;
+
+        &::before,
+        &::after {
+          content: "";
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+        }
+
+        &::before {
+          width: 2rem;
+          height: 2rem;
+          border: 1px solid $colorWhite;
+          border-radius: 50%;
+        }
+
+        &::after {
+          width: 1rem;
+          height: 1rem;
+          background: url(../../assets/images/common/twitter-icon-wh.svg) no-repeat;
+        }
+      }
+    }
+
+    &.-pc {
+      display: none;
+      @include mq(lg) {
+        display: block;
+      }
+    }
+
+    &.-sp {
+      @include mq(lg) {
+        display: none;
+      }
+    }
+  }
+}

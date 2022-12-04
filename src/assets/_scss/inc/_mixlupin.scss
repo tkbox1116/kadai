@@ -1,0 +1,465 @@
+@charset 'UTF-8';
+@use "setting" as *;
+@use "mixin" as *;
+//====================================
+//  mixlupin
+//====================================
+
+// @mixin boxCenter() {
+//   display: flex;
+//   align-items: center;
+//   justify-content: center;
+// }
+
+@mixin icoPosition() {
+  content: "";
+  position: absolute;
+  margin: auto;
+}
+
+@mixin clearfix() {
+  &:after {
+    content: "";
+    display: block;
+    clear: both;
+  }
+}
+
+@mixin icoInline() {
+  content: "";
+  display: inline-block;
+  position: relative;
+}
+
+@mixin boxCenter() {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@mixin icoLabel() {
+  display: inline-block;
+  position: relative;
+  padding: 4px 10px 5px;
+  font-size: 10px;
+  line-height: 1;
+}
+
+//====================================
+//  setting
+//====================================
+
+$imgPath: "/images/";
+// 例）background: url('#{$imgPath}bg.png')
+
+//====================================
+//  single.p
+//====================================
+.m_cms_wysiwyg {
+  margin-top: 40px;
+  @include mq(lg) {
+    margin-top: 60px;
+  }
+  > * {
+    margin-top: 10px;
+    @include mq(lg) {
+      margin-top: 15px;
+    }
+
+    &:first-child {
+      margin: 0;
+    }
+  }
+
+  time {
+    font-weight: 700;
+    line-height: 1;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    color: $primary-text-color;
+    font-family: $font-set-primary;
+  }
+
+  h1 {
+    margin-bottom: 2rem;
+    padding-bottom: 1.25rem;
+    border-bottom: 1px solid $primary-text-color;
+    font-size: 1.375rem;
+    line-height: 1.25;
+    @include mq(lg) {
+      margin-bottom: 3rem;
+      padding-bottom: 1.75rem;
+      font-size: 2.125rem;
+    }
+  }
+
+  h2 {
+    $font-size: 18px;
+    position: relative;
+    margin-top: 30px;
+    padding-bottom: 1.25rem;
+    font-size: set-size($font-size);
+    font-weight: 500;
+    @include mq(lg) {
+      margin-top: 40px;
+      padding: 1rem 0 2.5rem;
+      font-size: 28px;
+    }
+    &::before {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 3px;
+      background-color: $colorAccent;
+    }
+  }
+
+  h3 {
+    $font-size: 18px;
+    position: relative;
+    margin-top: 20px;
+    padding: 4px 10px;
+    font-size: set-size($font-size);
+    @include mq(lg) {
+      margin-top: 40px;
+      padding: 10px 15px 12px;
+      font-size: 26px;
+    }
+
+    &::before {
+      content: "";
+      position: absolute;
+      top: 11px;
+      left: 0;
+      width: 3px;
+      height: 88%;
+      background-color: $colorAccent;
+      @include mq(lg) {
+        width: 8px;
+        height: 88%;
+      }
+    }
+  }
+
+  h4 {
+    margin-top: 30px;
+    padding: 6px 15px 7px;
+    border: 1px solid $colorAccent;
+    font-size: 1rem;
+    @include mq(lg) {
+      margin-top: 20px;
+      padding: 4px 10px;
+      font-size: 1.25rem;
+    }
+  }
+
+  h5 {
+    margin-top: 20px;
+    padding: 10px;
+    background-color: $colorAccent;
+    color: $colorWhite;
+    font-size: 1rem;
+    // border-left: 3px solid $colorGray;
+    @include mq(lg) {
+      margin-top: 30px;
+      padding-left: 15px;
+    }
+  }
+
+  h6 {
+    display: inline-block;
+    margin-top: 30px;
+    padding: 7px 10px;
+    background: $colorLightGray;
+    color: $colorWhite;
+    font-size: 12px;
+    line-height: 1.6;
+    @include mq(lg) {
+      margin-top: 20px;
+      font-size: 14px;
+    }
+  }
+
+  p {
+    color: $primary-text-color;
+    @include clearfix();
+
+    strong {
+      color: #333;
+      font-weight: bold !important;
+    }
+  }
+
+  ul {
+    margin-top: 20px;
+    color: #333;
+    @include mq(lg) {
+      margin-top: 30px;
+    }
+
+    li {
+      position: relative;
+      margin-top: 8px;
+      padding-left: 1em;
+      color: #333;
+      &:first-child {
+        margin-top: 0;
+      }
+
+      &:before {
+        @include icoPosition();
+        top: 8px;
+        left: 0;
+        width: 4px;
+        height: 4px;
+        border-radius: 50%;
+        background: $primary-text-color;
+        @include mq(lg) {
+          top: 10px;
+        }
+      }
+    }
+  }
+
+  ol {
+    margin-top: 20px;
+    color: $primary-text-color;
+    counter-reset: no;
+    @include mq(lg) {
+      margin-top: 30px;
+    }
+
+    li {
+      position: relative;
+      margin-top: 8px;
+      padding-left: 1.9em;
+      color: $primary-text-color;
+      &:first-child {
+        margin-top: 0;
+      }
+
+      &:before {
+        content: "0" counter(no) ".";
+        position: absolute;
+        top: 0;
+        left: 0;
+        color: $colorAccent;
+        counter-increment: no;
+      }
+    }
+  }
+
+  blockquote {
+    padding: 15px;
+    border: 1px solid $colorGray;
+    color: #333;
+    @include mq(lg) {
+      padding: 20px;
+    }
+
+    * {
+      margin-top: 10px;
+      @include mq(lg) {
+        margin-top: 15px;
+      }
+
+      &:first-child {
+        margin: 0;
+      }
+    }
+  }
+
+  a {
+    transition: all .3s;
+    color: $colorAccent;
+    font-weight: 700;
+    text-decoration: underline;
+    &:hover {
+      opacity: .6;
+    }
+
+    &[target="_blank"] {
+      color: $primary-text-color;
+      &:after {
+        @include icoInline();
+        width: 10px;
+        height: 10px;
+        margin: 0 7px;
+        background: url(/wp-content/themes/taterunara/assets/images/common/arrow-target.svg) no-repeat;
+
+        background-size: 10px;
+      }
+    }
+  }
+
+  img {
+    display: block;
+    width: 100%;
+    height: auto;
+    aspect-ratio: 16/9;
+    object-fit: cover;
+
+    &.size-thumbnail {
+      width: 375px;
+      @include mq(lg) {
+        width: 100%;
+      }
+    }
+    &.size-medium {
+      width: 375px;
+      @include mq(lg) {
+        width: 100%;
+      }
+    }
+    &.size-full {
+      width: 100%;
+    }
+  }
+
+  .aligncenter {
+    margin: 0 auto;
+  }
+  .alignright {
+    margin: 0 0 15px 0;
+    float: none;
+    @include mq(lg) {
+      margin: 8px 0 0 10px;
+      float: right;
+    }
+  }
+  .alignleft {
+    margin: 8px 15px 0 0;
+    float: left;
+    @include mq(lg) {
+      margin: 0 0 15px 0;
+      float: none;
+    }
+  }
+  div.aligncenter {
+    margin: 10px 0 15px 0;
+    text-align: center;
+    @include mq(lg) {
+      margin: 25px 0 0 0;
+    }
+
+    img {
+      display: inline;
+    }
+  }
+  div.alignright {
+    margin: 10px 0 15px 0;
+    @include mq(lg) {
+      margin: 24px 0 20px 10px;
+    }
+  }
+  div.alignleft {
+    margin: 10px 0 15px 0;
+    @include mq(lg) {
+      margin: 24px 10px 20px 0;
+    }
+  }
+
+  .wp-caption-text {
+    margin-top: 5px;
+    font-size: 12px;
+    line-height: 1.4;
+  }
+
+  .wp-playlist {
+    margin-top: 30px;
+
+    .wp-playlist-current-item {
+      img {
+        @include mq(lg) {
+          width: auto;
+          height: 60px;
+        }
+      }
+    }
+
+    .wp-playlist-item {
+      padding: 0;
+      border-bottom: 1px solid $colorGray;
+
+      .wp-playlist-caption {
+        padding: 5px 0;
+      }
+
+      .wp-playlist-item-length {
+        top: 6px;
+      }
+    }
+  }
+
+  .gallery {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 10px 0 20px -10px;
+
+    .gallery-item {
+      padding: 10px 0 0 10px;
+      text-align: left !important;
+
+      a {
+        display: block;
+        line-height: 0;
+
+        figure {
+          img {
+            width: 100%;
+            height: auto;
+          }
+
+          figcaption {
+            margin-top: 5px;
+            font-size: 12px;
+            line-height: 1.4;
+          }
+        }
+      }
+    }
+  }
+
+  @for $i from 1 through 9 {
+    .gallery-columns-#{$i} {
+      .gallery-item {
+        // width: 50% / $i;
+        @include mq(lg) {
+          width: 100%;
+        }
+      }
+    }
+  }
+
+  iframe {
+    width: 100%;
+    height: 210px;
+    @include mq(lg) {
+      height: 420px;
+    }
+  }
+
+  // * ----------------------------------------
+  // * エディタ内のスタイル
+  .mceTemp {
+    .wp-caption {
+      width: auto !important;
+    }
+  }
+}
+
+.m_cms_wysiwyg-time {
+  font-family: $font-set-en;
+  font-size: .875rem;
+  @include mq(lg) {
+    font-size: 1.5rem;
+  }
+}

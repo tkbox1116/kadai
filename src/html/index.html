@@ -4,12 +4,82 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="/assets/css/common.css" />
-    <script src="../assets/js/main.js" defer></script>
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="description" content="各ページ固有の説明文を124文字程度で" />
+
+    <!-- OGP -->
+    <meta property="og:url" content="【サイトURL】" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="タイトル | 〇〇〇〇" />
+    <meta property="og:description" content="各ページ固有の説明文を124文字程度で" />
+    <meta property="og:site_name" content="" />
+    <meta property="og:image" content="【サイトURL】OGP画像のファイルパス" />
+    <meta property="og:locale" content="ja_JP" />
+
+    <!-- Twiteer -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:site" content="【twitterのアカウント名】" />
+
+    <link rel="canonical" href="【サイトURL】/" />
+
+    <!-- font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&family=Noto+Serif+JP:wght@400&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- css -->
+    <link rel="stylesheet" href="assets/css/common.css" />
+
+    <!-- js -->
+    <script src="../assets/js/main.bundle.js" defer></script>
+
+    <!-- ファビコン -->
+    <link rel="shortcut icon" href="assets/images/common/favicon.ico" />
+    <link rel="apple-touch-icon" href="assets/images/common/apple-touch-icon.png" />
     <title>Document</title>
   </head>
   <body>
-    <h1 class="test">hello webpack1</h1>
-    <img src="assets/images/sample.jpg" alt="" />
+    <header class="l-header p-header">
+      <div class="l-container">
+        <div class="l-header__wrap">
+          <div class="p-header__info">
+            <h1 class="p-header__title"><a href="/" class="p-logo">Dummy</a></h1>
+          </div>
+          <!-- /.p-header__info -->
+          <nav class="p-header__nav">
+            <h2 class="screen-reader-text">サイト内メニュー</h2>
+            <button
+              class="js-drawer c-button p-hamburger"
+              aria-controls="globalNav"
+              aria-expanded="false"
+              type="button"
+            >
+              <span class="p-hamburger__line">
+                <span class="screen-reader-text">メニューを開閉</span>
+              </span>
+            </button>
+            <ul id="globalNav" class="p-globalNav">
+              <li><a href="index.html">Home</a></li>
+              <li><a href="page.html">About Me</a></li>
+              <li><a href="page.html">Works</a></li>
+              <li><a href="page.html">Contact</a></li>
+            </ul>
+          </nav>
+        </div>
+        <!-- /.l-header__wrap -->
+      </div>
+      <!-- /.p-header__inner -->
+    </header>
+
+    <main>
+      <p>テスお</p>
+    </main>
+
+    <footer class="">
+      <a href="#" class="js-scrollTop">top</a>
+    </footer>
   </body>
 </html>

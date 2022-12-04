@@ -1,3 +1,7 @@
-import "../scss/common.scss"; //sassのimport
+import "../_scss/swiper.scss";
+import "../_scss/venobox.scss";
+import "../_scss/common.scss"; //sassのimport
 
-console.log("初めてのtest");
+// import "./app";
+
+console.log("テスト111");

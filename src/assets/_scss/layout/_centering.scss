@@ -1,0 +1,19 @@
+@charset 'UTF-8';
+@use "../inc" as *;
+/*
+  Centering
+-----------------------------------------------------*/
+
+.l-container {
+  width: 90%;
+  max-width: $content-width;
+  margin: 0 auto;
+
+  &.-sizeS {
+    max-width: 1040px;
+  }
+}
+
+.l-button-wrap {
+  text-align: center;
+}

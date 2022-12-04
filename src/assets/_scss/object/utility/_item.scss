@@ -1,0 +1,83 @@
+@charset 'UTF-8';
+@use "../../inc" as *;
+/*
+  Screen Reader Text
+*/
+.screen-reader-text {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(1px, 1px, 1px, 1px);
+}
+
+.pan {
+  ol {
+    padding: 15px 0;
+    @include mq(lg) {
+      padding: 15px 0;
+    }
+
+    li {
+      display: inline;
+    }
+
+    li a {
+      position: relative;
+      transition: .3s ease-in-out;
+      color: $primary-text-color;
+      text-decoration: none;
+      &:not(:last-child) {
+        margin-right: 1.5rem;
+      }
+      &:not(:last-child) ::after {
+        content: "";
+        position: absolute;
+        top: 3px;
+        right: -.875rem;
+        bottom: 0;
+        width: .5rem;
+        height: .5rem;
+        margin: auto 0;
+        transform: rotate(45deg);
+        border-top: 1px solid #c3c1c3;
+        border-right: 1px solid #c3c1c3;
+        font-size: inherit;
+      }
+
+      &:hover {
+        opacity: .5;
+      }
+
+      &.current-item {
+        color: $colorAccent;
+      }
+    }
+
+    li.current-item {
+      color: $colorAccent;
+      pointer-events: none;
+      span::after {
+        display: none;
+      }
+    }
+  }
+  &-top {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    @include mq(lg) {
+      top: 10px;
+    }
+  }
+
+  &-bottom {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    @include mq(lg) {
+      bottom: 10px;
+    }
+  }
+}
