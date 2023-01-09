@@ -52,7 +52,7 @@ module.exports = {
         // JS / TS
         test: /\.(js|ts)$/, //対象となるファイル
         enforce: "pre", //先に実行
-        exclude: /node_modules/, //excludeで除外
+        exclude: /node_modules/, //excludeでnode_modulesを除外
         loader: "eslint-loader",
         options: {
           fix: true, //autofixモードの有効化
