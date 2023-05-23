@@ -9724,12 +9724,15 @@ __webpack_require__.r(__webpack_exports__);
 
  //sassのimport
 
+// import { mySwiper, reviewSwiper } from "./lib/swiper";
 
 
 
 (0,_lib_app__WEBPACK_IMPORTED_MODULE_3__["default"])();
 (0,_lib_modal__WEBPACK_IMPORTED_MODULE_4__["default"])();
 (0,_lib_scroll__WEBPACK_IMPORTED_MODULE_5__["default"])();
+// reviewSwiper;
+// mySwiper;
 
 console.log("テスト111");
 
