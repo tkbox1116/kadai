@@ -6,12 +6,13 @@ footer
 
 .p-footer {
   position: relative;
-  padding-top: 160px;
   background-color: $colorWhite;
+
+  &__scrollWrap {
+    text-align: center;
+  }
   &__scroll {
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    display: inline-block;
     color: $primary-text-color;
     font-size: fz(20);
     font-weight: 400;
