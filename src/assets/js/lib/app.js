@@ -71,31 +71,17 @@ export default function () {
 
   hoverContents.forEach((hoverContent) => {
     hoverContent.addEventListener("mouseenter", () => {
-      const parentArticle = hoverContent.closest("article.style-content");
+      const parentArticle = hoverContent.closest(".style-content");
       const styleImage = parentArticle.querySelector(".style-image");
 
       styleImage.classList.add("is-hover");
     });
 
     hoverContent.addEventListener("mouseleave", () => {
-      const parentArticle = hoverContent.closest("article.style-content");
+      const parentArticle = hoverContent.closest(".style-content");
       const styleImage = parentArticle.querySelector(".style-image");
 
       styleImage.classList.remove("is-hover");
     });
   });
 }
-
-// // ----------------------------------------
-// // DOM生成後
-// window.addEventListener("DOMContentLoaded", function () {
-
-// });
-
-// // ----------------------------------------
-// // ページの全データを読み込み後
-// window.addEventListener("load", function () {});
-
-// // ----------------------------------------
-// // スクロール後
-// window.addEventListener("scroll", function () {});
