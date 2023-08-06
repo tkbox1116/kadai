@@ -5,12 +5,11 @@
 -----------------------------------------------------*/
 
 .l-container {
-  width: 90%;
   max-width: $content-width;
   margin: 0 auto;
 
   &.-sizeS {
-    max-width: 1040px;
+    max-width: 964px;
   }
 }
 

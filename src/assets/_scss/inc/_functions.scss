@@ -6,6 +6,10 @@
 //   @return ($size / $base-font-size) * 1em;
 // }
 
-@function set-size($size, $base: 16px) {
-  @return calc($size / $base * 1rem);
+// @function set-size($size, $base: 16px) {
+//   @return calc($size / $base * 1rem);
+// }
+
+@function fz($fontSize) {
+  @return ($fontSize / 16) * 1rem;
 }

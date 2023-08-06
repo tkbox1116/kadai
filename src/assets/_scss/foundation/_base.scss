@@ -29,22 +29,21 @@ html {
 
 body {
   height: 100%;
-  padding-top: set-size(48px);
+  // transition: 1.9s $easeInCubic;
+  transition: 1.55s ease-in;
+  transition-property: opacity;
+  opacity: 0;
   background-color: $colorBase;
   color: $primary-text-color;
-
-  // font: calc(#{set-size(12px)}/ 1.75) $font-set-primary; //$base-font-sizeでスマホのサイズ指定 line-height指定
-  // font:  calc($size / $base * 1rem) $font-set-primary; //$base-font-sizeでスマホのサイズ指定 line-height指定
-  // font: math.div(#{set-size(12px)}, 1.75); //$base-font-sizeでスマホのサイズ指定 line-height指定
   font-family: $font-set-primary;
   font-size: $base;
+  letter-spacing: .1em;
   line-height: 1.75;
   text-rendering: optimizeLegibility;
   -webkit-font-feature-settings: "pkna";
   font-feature-settings: "pkna";
-
-  @include mq(md) {
-    // padding-top: set-size(80px);
+  &.is-open {
+    opacity: 1;
   }
 
   &.is-drawerActive {
@@ -66,3 +65,7 @@ a {
 button {
   cursor: pointer;
 }
+// $easeOutCubic: cubic-bezier(.215, .61, .355, 1);
+// $easeInOutCubic: cubic-bezier(.645, .045, .355, 1);
+// $easeInQuart: cubic-bezier(.895, .03, .685, .22);
+// $easeOutQuart: cubic-bezier(.165, .84, .44, 1);

@@ -7,7 +7,7 @@
 //------------------------------------
 
 // Contentの幅
-$content-width: 1080px !default;
+$content-width: 1168px !default;
 
 // ブレークポイント
 $breakpoints: (
@@ -26,7 +26,7 @@ $breakpoints: (
 //====================================
 
 // ベースカラー
-$colorBase: #ddd;
+$colorBase: #fff;
 
 // メインカラー
 $colorMain: #006edb;
@@ -59,7 +59,7 @@ $colorBeige: #e7e7e1;
 $colorLightBeige: #fcfbf5;
 
 // テキストの色
-$primary-text-color: #2b2b2b;
+$primary-text-color: #151515;
 
 // セカンダリーカラー
 $secondary-text-color: $md-blue-grey-500;
@@ -85,8 +85,7 @@ $hover-text-color: $md-cyan-300;
 // }
 
 //$font-set-primary : set-font-family(1) !default;
-$font-set-primary: "M PLUS 1p", "Noto Sans JP", "游ゴシック", "Yu Gothic", "游ゴシック体", "YuGothic",
-  "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "Meiryo UI", "メイリオ", Meiryo, sans-serif;
+$font-set-primary: "Lato", "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo, sans-serif;
 // $font-set-primary: "Noto Serif JP", "游明朝", "Yu Mincho", YuMincho, "Hiragino Mincho Pro", serif;
 $font-set-serif: "Shippori Mincho", serif;
 $font-set-en: "bourtonLine";
@@ -100,14 +99,15 @@ $font-set-en: "bourtonLine";
 // 7 : Noto Sans
 
 // $size: 14px;
-$base: 16px;
+$base: 13px;
 
 //====================================
 //  cubic-bezier
 //====================================
-$easing-opera: cubic-bezier(.82, 0, .16, 1);
+$easing-opera: cubic-bezier(.57, 0, .16, 1);
 // $easing-shibata: cubic-bezier(0.22, 0, 0.53, 1);
 $easing-heart: cubic-bezier(.22, 0, .53, 1);
+$easing-f: cubic-bezier(.165, .84, .44, 1);
 
 //====================================
 //  common easing

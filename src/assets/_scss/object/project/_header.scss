@@ -4,30 +4,212 @@
   Header
 */
 .p-header {
-  overflow: hidden;
   background-color: #fff;
 
-  &__info {
-    font-size: 0;
+  &__inner {
+    position: absolute;
+    z-index: 10;
+    width: 100%;
+    transform: translateY(-100%);
+    transition: .55s $easing-opera;
+    transition-property: transform;
   }
 
-  &__title {
-    display: inline-block;
-    font-size: medium;
-    vertical-align: middle;
+  &__overlay {
+    visibility: hidden;
+    position: absolute;
+    z-index: 3;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    transition: .5s ease-out;
+    transition-property: opacity, visibility;
+
+    opacity: 0;
+    background-color: rgba(0, 0, 0, .3);
   }
 
-  &__text {
-    display: none;
-    margin-left: 1em;
-    font-size: medium;
-    vertical-align: middle;
+  &__button {
+    display: inline-flex;
+    position: absolute;
+    right: 0;
+    bottom: -40px;
+    align-items: center;
+    justify-content: center;
+    width: 128px;
+    min-height: 40px;
+    transition: .4s ease-out;
+    transition-property: background-color;
+    background-color: #eaeaea;
+    color: #68686e;
+    font-size: fz(12);
+    font-weight: 500;
+    letter-spacing: .1em;
+    &:hover {
+      transition: .4s ease-out;
+      transition-property: background-color;
+      background-color: #fafafa;
+    }
 
-    @include mq(md) {
-      display: inline-block;
+    .inner {
+      display: inline-flex;
+      position: relative;
+      flex-direction: column;
+      height: 13px;
+      padding-left: 20px;
+      overflow: hidden;
+
+      transition: .5s ease-out;
+      transition-property: transform;
+      line-height: 1;
+
+      &::before {
+        content: "";
+        position: absolute;
+        top: 50%;
+        left: 0;
+        width: 9px;
+        height: 5px;
+        transform: translateY(-50%);
+        transition: .5s ease-out;
+        transition-property: transform;
+        background: url(../../assets/images/arrow-header.svg) no-repeat center;
+        background-size: contain;
+      }
+      span {
+        display: block;
+        transition: .3s ease-out;
+        transition-property: transform;
+      }
     }
   }
 
-  // &__nav {
-  // }
+  &__list {
+    display: flex;
+    padding: 24px 20px;
+    background-color: #eaeaea;
+    list-style: none;
+    gap: 0 4px;
+  }
+
+  &__item {
+    > a {
+      color: $primary-text-color;
+      text-decoration: none;
+    }
+  }
+
+  &__itemImge {
+    overflow: hidden;
+    img {
+      object-fit: cover;
+      aspect-ratio: 1 / 1;
+      width: 100%;
+    }
+  }
+
+  &__itemBody {
+    margin-top: 10px;
+    > span {
+      display: block;
+      letter-spacing: .1em;
+    }
+
+    .num {
+      font-size: 10px;
+    }
+
+    .color {
+      margin-top: -3px;
+      font-size: 12px;
+    }
+  }
+}
+
+.is-drawerActive {
+  .p-header__inner {
+    transform: translateY(0);
+  }
+
+  .p-header__button {
+    .inner {
+      &::before {
+        transform: translateY(-50%) rotate(-180deg);
+        transition: .5s ease-out;
+        transition-property: transform;
+      }
+      span {
+        transform: translateY(-13px);
+        transition: .5s ease-out;
+        transition-property: transform;
+      }
+    }
+  }
+
+  .p-header__overlay {
+    visibility: visible;
+    transition: .3s ease-out;
+    transition-property: opacity, visibility;
+    transition-delay: .2s;
+    opacity: 1;
+  }
+}
+
+.hover-scale {
+  figure {
+    overflow: hidden;
+  }
+  img {
+    transition: .4s ease-out;
+    transition-property: transform;
+  }
+  &:hover {
+    img {
+      transform: scale(1.07);
+      transition: .4s ease-out;
+      transition-property: transform;
+    }
+  }
+}
+
+.hover-rotate {
+  &:hover {
+    .hover-rotate__text {
+      &::before {
+        transform: translate3d(0, -90%, 0);
+        opacity: 1;
+      }
+    }
+
+    .hover-rotate__text__inner {
+      transform: translate3d(0, -90%, 0);
+      transition: .68s $easing-f;
+      transition-property: opacity, transform;
+      opacity: 0;
+    }
+  }
+}
+
+.hover-rotate__text {
+  display: block;
+  position: relative;
+  clip-path: inset(0 0 -.2em);
+  // beforeが表示されてるテキスト
+  &::before {
+    content: attr(data-text);
+    position: absolute;
+    top: 90%;
+    left: 0;
+    transition: .68s $easing-f;
+    transition-property: opacity, transform;
+    opacity: 0;
+  }
+}
+
+.hover-rotate__text__inner {
+  display: block;
+  transition: .68s $easing-f;
+  transition-property: opacity, transform;
+  opacity: 1;
 }

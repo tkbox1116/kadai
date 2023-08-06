@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="14" height="14" viewBox="0 0 14 14">
+  <defs>
+    <clipPath id="clip-path">
+      <rect id="長方形_87" data-name="長方形 87" width="14" height="14" transform="translate(301 10252)" fill="#fff" stroke="#707070" stroke-width="1"/>
+    </clipPath>
+  </defs>
+  <g id="icon-insta" transform="translate(-301 -10252)" clip-path="url(#clip-path)">
+    <path id="insta" d="M685.3,10071H680.7a3.68,3.68,0,0,0-3.7,3.678v4.644a3.727,3.727,0,0,0,3.7,3.738H685.3a3.728,3.728,0,0,0,3.7-3.739v-4.643a3.679,3.679,0,0,0-3.7-3.679Zm2.547,7.9a2.974,2.974,0,0,1-2.988,2.954h-3.722a2.974,2.974,0,0,1-2.988-2.955v-3.738a2.988,2.988,0,0,1,2.988-3.016h3.722a2.987,2.987,0,0,1,2.988,3.016Zm-4.688-5.065a3.2,3.2,0,1,0,3.16,3.2,3.194,3.194,0,0,0-3.16-3.2Zm0,5.126a1.9,1.9,0,1,1,1.354-.567A1.908,1.908,0,0,1,683.161,10078.96Zm3.745-5.126a.8.8,0,1,1-.388-.733.8.8,0,0,1,.388.733Z" transform="translate(-375 182)" fill-rule="evenodd"/>
+  </g>
+</svg>

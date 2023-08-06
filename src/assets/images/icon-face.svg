@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="14" height="14" viewBox="0 0 14 14">
+  <defs>
+    <clipPath id="clip-path">
+      <rect id="長方形_86" data-name="長方形 86" width="14" height="14" transform="translate(276 10252)" fill="#fff" stroke="#707070" stroke-width="1"/>
+    </clipPath>
+  </defs>
+  <g id="icon-face" transform="translate(-276 -10252)" clip-path="url(#clip-path)">
+    <path id="facebook" d="M742.461,10072.34h1.209v-2.04h-1.813a2.52,2.52,0,0,0-1.865.96,3.059,3.059,0,0,0-.5,1.979h0v1.5H737.7v2.1h1.791v5.46h2.065v-5.46h1.777l.248-2.1h-2.025v-1.5h0a.836.836,0,0,1,.9-.9Z" transform="translate(-457.7 182.7)" fill-rule="evenodd"/>
+  </g>
+</svg>
