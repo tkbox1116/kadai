@@ -5,8 +5,9 @@ footer
 */
 
 .p-footer {
-  margin-top: 160px;
-
+  position: relative;
+  padding-top: 160px;
+  background-color: $colorWhite;
   &__scroll {
     display: flex;
     align-items: center;
