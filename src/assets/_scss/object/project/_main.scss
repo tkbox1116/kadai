@@ -324,6 +324,7 @@
     &::after {
       content: "";
       position: absolute;
+      z-index: -1;
       right: -52px;
       bottom: -263px;
       width: 122px;
